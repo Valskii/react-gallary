@@ -2,13 +2,57 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>React Webpack Template Title</title>
+  <title>React Gallary</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <style>
+	.loading{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		font-size: 100px;
+		transform: translateX(-50%) translateY(-50%);
+	}
+	.loading_ani:before{
+		content:'';
+		position: absolute;
+		right: 42%;
+		top: -10%;
+		display: inline-block;
+		width: 10px;
+		height: 10px;
+		background-color: blue;
+		border: 2px solid blue;
+		border-radius: 10px;
+	}
+	.loading_ani{
+		content:'';
+		position: relative;
+		display: inline-block;
+		width: 80px;
+		height: 80px;
+		border: 2px solid black;
+		border-radius: 50px;
+		animation: loading 2s infinite;
+	}
+	.loading_ani:hover{
+		transform: rotate(90deg);
+	}
+	@keyframes loading{
+		
+		to{transform: rotate(360deg);}
+	}
+  </style>
 </head>
 <body>
-  <div id="app">APPLICATION士大夫 CONTENT</div>
+  <div id="app">
+	<div class="loading">
+		loading
+		<div class="loading_ani">
+		</div>
+	</div>
+  </div>
 
   <script>__REACT_DEVTOOLS_GLOBAL_HOOK__ = parent.__REACT_DEVTOOLS_GLOBAL_HOOK__</script>
   <script type="text/javascript" src="/assets/app.js"></script>
